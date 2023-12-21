@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng Dụng Xử Lý Ngôn Ngữ Tự Nhiên</title>
+</head>
+<body>
+    <h1>Ứng Dụng Demo Xử Lý Ngôn Ngữ Tự Nhiên</h1>
+    <form method="POST" action="/">
+        <label for="user_input">Nhập văn bản của bạn:</label>
+        <textarea id="user_input" name="user_input" rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit">Gửi</button>
+    </form>
+
+    {% if topic_result_lstm %}
+        <h2>Kết Quả Mô Hình LSTM:</h2>
+        <p>Chủ Đề: {{ topic_result_lstm }}</p>
+        <p>Tâm Trạng: {{ sentiment_result_lstm }}</p>
+    {% endif %}
+
+    {% if topic_result_rf %}
+        <h2>Kết Quả Mô Hình Random Forest:</h2>
+        <p>Chủ Đề: {{ topic_result_rf }}</p>
+        <p>Tâm Trạng: {{ sentiment_result_rf }}</p>
+    {% endif %}
+
+    {% if topic_result_lr %}
+        <h2>Kết Quả Mô Hình Logistic Regression:</h2>
+        <p>Chủ Đề: {{ topic_result_lr }}</p>
+        <p>Tâm Trạng: {{ sentiment_result_lr }}</p>
+    {% endif %}
+</body>
+</html>
