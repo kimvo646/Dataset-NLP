@@ -135,5 +135,10 @@ def predict():
                                predicted_sentiment_lr=predicted_sentiment_lr,
                                predicted_sentiment_lstm=predicted_sentiment_lstm)
 
+@app.errorhandler(KeyError)
+def handle_key_error(e):
+    error_message = f"KeyError: {str(e)}"
+    return render_template('error.html', error_message=error_message)
+
 if __name__ == '__main__':
     app.run(debug=True)
