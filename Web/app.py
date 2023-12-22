@@ -12,7 +12,6 @@ nltk.download('punkt')
 
 app = Flask(__name__)
 
-# models_folder = r'C:\Users\KIM\OneDrive - ueh.edu.vn\UEH\UEH\HK 5\Natural Language Processing\Final Project\Code test\train_model'
 models_folder = os.path.dirname(os.path.abspath(__file__))
 
 w2v_model_path = os.path.join(models_folder, 'model_w2v')
